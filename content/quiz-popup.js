@@ -98,6 +98,7 @@ function showQuizPopup(key) {
   //console.log("ShowQuizPopup kommt an");
   let overlay = createOverlay();
   let questionsAsHTML = getQuestionData(key);
+  // todo: für jede question das popup erzeugen, wichtig: zum nächsten Popup darf erst wenn auf Nächste Frage geklickt wird
   let popupDiv = createPopupDiv();
   updatePopupContent(popupDiv, questionsAsHTML, overlay);
 
@@ -128,18 +129,36 @@ function createOverlay(){
 
 function getQuestionData(key){
 
-  if(mapAllContentsOrder.has(key)){
+  if(mapOfQuiz.has(key)){
 
-    const quiz = getContent(key);
+    /*
+    // Gib den Inhalt von mapOfQuiz und seinen Objekten aus
+    mapOfQuiz.forEach((quiz, key) => {
+      console.log(`Schlüssel: ${key}`);
+      console.log(quiz); // Gib das Quiz-Objekt aus
+
+      // Um auf die Fragen eines Quiz zuzugreifen, kannst du auch hier eine Schleife verwenden
+      quiz.questions.forEach((question, questionKey) => {
+        console.log(`Frage Schlüssel: ${questionKey}`);
+        console.log(question); // Gib das Frage-Objekt aus
+      });
+    });
+  */
+
+    const quiz = mapOfQuiz.get(key);
     const mapOfQuestions = quiz.questions;
     const htmlContentList = [];
 
+
+
     mapOfQuestions.forEach((question) => {
+
+
       htmlContentList.push(question.htmlContent);
     });
+
+
     return htmlContentList;
-
-
   } else {
     return "Kein Quiz mit dem Key gefunden";
   }
@@ -179,10 +198,6 @@ function updatePopupContent(popupDiv, questionsAsHTML, overlay) {
     finishButton.textContent = "Fertig";
     finishButton.addEventListener("click", function () {
       document.body.removeChild(overlay);
-      overallContentIndex++;
-      currentQuizIndex++;
-      showNextContent();
-
     });
 
     popupDiv.appendChild(finishButton);
@@ -224,6 +239,8 @@ function showAnswer(currentQuestion, correct){
 
 function showNextQuestion(){
   currentQuestionIndex++;
+
+
   document.getElementById("nextButton").style.display = "none";
 }
 
@@ -271,19 +288,3 @@ function getQuizByKey(key){
     return "Ungültiger Quiz Key!"
   }
 }
-
-
-function showQuizPopupWithDelay(key, delayInSeconds){
-  setTimeout(function () {
-    showQuizPopup(key);
-  }, delayInSeconds * 1000);
-}
-
-function createQuizUeberblick1(){
-  showQuizPopup("Quiz Ueberblick 1");
-}
-
-function createQuizUeberblick2(){
-  showQuizPopup("Quiz Ueberblick 2");
-}
-

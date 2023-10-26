@@ -2,7 +2,7 @@
 Skript für die Erstellung von Video oder Text-Popups
 **/
 
-let currentContentIndex = 1;
+
 
 /**
  Methode, um die Datei-Pfade der Level-Lerninhalte zu definieren
@@ -71,7 +71,21 @@ function createVideoPopupWithDelay(id, delayInSeconds, width, height, ){
     }, delayInSeconds * 1000);
 }
 
-function createTextDiv(overlay, width, height) {
+// Methode, um ein Text-Popup zu erzeugen
+function createTextPopup(textHtml, width, height) {
+    // Popup als HTML-Div wird erzeugt
+    var overlay = document.createElement("div");
+    overlay.style.position = "fixed";
+    overlay.style.top = "0";
+    overlay.style.left = "0";
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+    overlay.style.display = "flex";
+    overlay.style.alignItems = "center";
+    overlay.style.justifyContent = "center";
+    overlay.style.zIndex = "9999";
+
     // HTML-Div für den Text
     var textDiv = document.createElement("div");
     textDiv.style.width = width + "px";
@@ -81,43 +95,12 @@ function createTextDiv(overlay, width, height) {
     textDiv.style.overflowY = "auto"; // Scrollbar
     textDiv.style.padding = "20px";
 
-
-    return textDiv;
-}
-
-// Methode, um ein Text-Popup zu erzeugen
-function createTextPopup(key, width, height) {
-
-    let overlay = createOverlay();
-    let textDiv = createTextDiv(overlay, width, height);
-
-
-
     // HTML-Text dem Div hinzufügen
-    let currentContentKey = mapAllContentsOrder.get(key);
-    if(mapAllContents.has(currentContentKey)){
-        let content = mapAllContents.get(currentContentKey);
-        let htmlContent = content._htmlContent;
-        textDiv.innerHTML = htmlContent;
-    }
-
-    addCloseButton(textDiv);
+    textDiv.innerHTML = textHtml;
 
     // Dann auch dem Overlay
     overlay.appendChild(textDiv);
 
-    // Zuletzt dann das Overlay dem Body hinzugefügt
-    document.body.appendChild(overlay);
-}
-
-function createTextPopupWithDelay(key, width, height, delayInSeconds){
-    setTimeout(function () {
-        createTextPopup(key, width, height);
-    }, delayInSeconds * 1000);
-}
-
-
-function addCloseButton(textDiv){
     // Schließen-Button erzeugen
     var closeButton = document.createElement("button");
     closeButton.innerText = "Weiter";
@@ -132,52 +115,11 @@ function addCloseButton(textDiv){
     // Lerninhalt kann per Schließen-Button unten rechts geschlossen werden
     closeButton.addEventListener("click", function () {
         document.body.removeChild(overlay);
-        currentContentIndex++;
-        overallContentIndex++;
-        showNextContent();
-
-        /*
-        if(currentContentIndex<4)
-        createTextPopupWithDelay(currentContentIndex, 600, 400, 10);
-         */
-        /*
-        switch(overallContentIndex){
-            case 2: showQuizPopup1WithDelay(5);
-            case 3: showUeberblickContent2WithDelay(5);
-            //case 4: showQuizPopup2WithDelay(5);
-        }
-        */
     });
 
     // Close Button wird dem Text-Div hinzugefügt
     textDiv.appendChild(closeButton);
-}
 
-
-
-
-function showLevel1Content(){
-    createTextPopup("Ueberblick Content 1", 600, 400);
-}
-
-function showQuizPopup1WithDelay(delayInSeconds) {
-    setTimeout(function () {
-        showQuizPopup("Quiz Ueberblick 1");
-    }, delayInSeconds * 1000);
-
-}
-
-function showQuizPopup2WithDelay(delayInSeconds) {
-    setTimeout(function () {
-        showQuizPopup("Quiz Ueberblick 2");
-    }, delayInSeconds * 1000);
-
-}
-
-
-
-function showUeberblickContent2WithDelay(delayInSeconds){
-    setTimeout(function () {
-        createTextPopup("Ueberblick Content 2")
-    }, delayInSeconds * 1000);
+    // Zuletzt dann das Overlay dem Body hinzugefügt
+    document.body.appendChild(overlay);
 }
