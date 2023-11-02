@@ -1,0 +1,52 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url("smblvl.png");
+  background-size: cover; /* Das Bild wird so skaliert, dass es den gesamten Ansichtsbereich abdeckt */
+  background-repeat: no-repeat; /* Das Bild wird nicht wiederholt */
+  background-attachment: fixed; /* Das Hintergrundbild wird festgelegt, sodass es sich beim Scrollen nicht bewegt */
+  background-position: center center; /* Das Bild wird sowohl horizontal als auch vertikal zentriert */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* Ein leicht durchsichtiges Weiß, damit der Text bei jedem Hintergrundbild lesbar bleibt */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2em;
+  color: #333;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #555;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.thema ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.thema li {
+  margin-bottom: 10px;
+}
+
+.thema li a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.thema li a:hover {
+  text-decoration: underline;
+}
+
