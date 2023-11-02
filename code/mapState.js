@@ -191,7 +191,7 @@ Mario.MapState.prototype.GenerateLevel = function() {
     var lowestX = 9999, lowestY = 9999, i = 0;
     t = 0;
 
-    while (levelCount < 2) {
+    while (levelCount < 6) {
         x = ((Math.random() * (((width - 1) / 3) | 0)) | 0) * 3 + 2;
         y = ((Math.random() * (((height - 1) / 3) | 0)) | 0) * 3 + 1;
 
