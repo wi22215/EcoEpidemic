@@ -1,0 +1,13 @@
+const luftverschmutzungsquestion4 : QuestionTemplate = new QuestionTemplate(
+    "Wie kann Luftverschmutzung entgegengewirkt werden?",
+    ["Durch die Intensivierung von Forschung und Entwicklung in der Kernfusion als sauberere Energiequelle."," Durch die Integration vertikaler Gärten in städtischen Gebäuden zur Verbesserung der städtischen Luftqualität.", "Durch staatliche Regulierungen, den Einsatz von Technologien wie emissionsarmen Fahrzeugen, verstärktem Einsatz erneuerbarer Energien und bewusste Entscheidungen der Einzelpersonen.", "Durch die Einrichtung globaler "Luftreinigungsstationen", die kontinuierlich schädliche Partikel aus der Atmosphäre filtern."],
+    "Durch staatliche Regulierungen, den Einsatz von Technologien wie emissionsarmen Fahrzeugen, verstärktem Einsatz erneuerbarer Energien und bewusste Entscheidungen der Einzelpersonen."
+)
+
+<h2>Wie kann Luftverschmutzung entgegengewirkt werden?</h2>
+<input type="radio" name="answer" value=" Durch die Intensivierung von Forschung und Entwicklung in der Kernfusion als sauberere Energiequelle.">  Durch die Intensivierung von Forschung und Entwicklung in der Kernfusion als sauberere Energiequelle. <br>
+<input type="radio" name="answer" value="  Durch die Integration vertikaler Gärten in städtischen Gebäuden zur Verbesserung der städtischen Luftqualität.">   Durch die Integration vertikaler Gärten in städtischen Gebäuden zur Verbesserung der städtischen Luftqualität. <br>
+<input type="radio" name="answer" value="  Durch staatliche Regulierungen, den Einsatz von Technologien wie emissionsarmen Fahrzeugen, verstärktem Einsatz erneuerbarer Energien und bewusste Entscheidungen der Einzelpersonen.">   Durch staatliche Regulierungen, den Einsatz von Technologien wie emissionsarmen Fahrzeugen, verstärktem Einsatz erneuerbarer Energien und bewusste Entscheidungen der Einzelpersonen. <br>
+<input type="radio" name="answer" value=" Durch die Einrichtung globaler Luftreinigungsstationen, die kontinuierlich schädliche Partikel aus der Atmosphäre filtern.">  Durch die Einrichtung globaler "Luftreinigungsstationen", die kontinuierlich schädliche Partikel aus der Atmosphäre filtern. <br>
+<button onclick="checkAnswer()">Absenden</button><br>
+<button id="nextButton" onclick="showNextQuestion()"> nächste Frage</button>

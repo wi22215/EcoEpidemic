@@ -1,0 +1,13 @@
+const mitigationQuestion6 = new QuestionTemplate(
+    "Von wie vielen Ländern wurde das Pariser Klimaabkommen unterschrieben?",
+    ["ca. 50", "ca. 100", "ca. 150", "ca. 200"],
+    "ca. 200",
+    <h2>Von wie vielen Ländern wurde das Pariser Klimaabkommen unterschrieben?</h2>
+    <input type="radio" name="answer" value="ca. 50"> ca. 50 <br>
+    <input type="radio" name="answer" value="ca. 100"> ca. 100 <br>
+    <input type="radio" name="answer" value="ca. 150"> ca. 150 <br>
+    <input type="radio" name="answer" value="ca. 200"> ca. 200 <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    <div id="result"></div>
+)

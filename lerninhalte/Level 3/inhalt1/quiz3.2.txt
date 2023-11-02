@@ -1,0 +1,11 @@
+const adaptationQuestion2 = new QuestionTemplate(
+    "Die Energieverbrauchsrate von städtischen Gebieten ist doppelt so hoch wie in ländlichen Gebieten.",
+    ["wahr", "falsch"],
+    "wahr",
+    <h2>Die Energieverbrauchsrate von städtischen Gebieten ist doppelt so hoch wie in ländlichen Gebieten.</h2>
+    <input type="radio" name="answer" value="wahr"> wahr <br>
+    <input type="radio" name="answer" value="falsch"> falsch <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    <div id="result"></div>
+)

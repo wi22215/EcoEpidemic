@@ -3,6 +3,9 @@
 	Code by Rob Kleffner, 2011
 */
 
+var defaultSpeed = 1;
+var sideWaysSpeed = defaultSpeed;
+
 Mario.Enemy = function(world, x, y, dir, type, winged) {
     this.GroundInertia = 0.89;
     this.AirInertia = 0.89;
@@ -86,7 +89,7 @@ Mario.Enemy.prototype.CollideCheck = function() {
 };
 
 Mario.Enemy.prototype.Move = function() {
-    var i = 0, sideWaysSpeed = 1.75, runFrame = 0;
+    var i = 0, runFrame = 0;
 
     this.WingTime++;
     if (this.DeadTime > 0) {

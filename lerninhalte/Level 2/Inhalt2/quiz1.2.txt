@@ -1,0 +1,13 @@
+const wasserUndGesundheitquestion2 : QuestionTemplate = new QuestionTemplate(
+    "Welche Tätigkeit ist NICHT direkt verantwortlich für die Verschmutzung unserer Wasserquellen?",
+    ["Industrieabwässer","Landwirtschaft mit Düngemitteln und Pestiziden", "Haushaltsabwässer in Gebieten ohne angemessene Abwasserbehandlung", "Bau von Windkraftanlagen"],
+    "Bau von Windkraftanlagen"
+)
+
+<h2>Welche Tätigkeit ist NICHT direkt verantwortlich für die Verschmutzung unserer Wasserquellen?</h2>
+<input type="radio" name="answer" value=" Industrieabwässer">  Industrieabwässer <br>
+<input type="radio" name="answer" value=" Landwirtschaft mit Düngemitteln und Pestiziden">  Landwirtschaft mit Düngemitteln und Pestiziden <br>
+<input type="radio" name="answer" value="  Haushaltsabwässer in Gebieten ohne angemessene Abwasserbehandlung">   Haushaltsabwässer in Gebieten ohne angemessene Abwasserbehandlung <br>
+<input type="radio" name="answer" value=" Bau von Windkraftanlagen">  Bau von Windkraftanlagen <br>
+<button onclick="checkAnswer()">Absenden</button><br>
+<button id="nextButton" onclick="showNextQuestion()"> nächste Frage</button>

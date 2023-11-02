@@ -1,0 +1,12 @@
+const mitigationQuestion1 = new QuestionTemplate(
+    "Zu welcher Mitigationsstrategie gehört Mineralkarbonisierung?",
+    ["Veränderung der Strahlungsbilanz der Erde", "Reduktion von Treibhausgasausstoßen", "Negative Emissionstechnologien"],
+    "Negative Emissionstechnologien",
+    <h2>Zu welcher Mitigationsstrategie gehört Mineralkarbonisierung?</h2>
+    <input type="radio" name="answer" value="Veränderung der Strahlungsbilanz der Erde"> Veränderung der Strahlungsbilanz der Erde <br>
+    <input type="radio" name="answer" value="Reduktion von Treibhausgasausstoßen"> Reduktion von Treibhausgasausstoßen <br>
+    <input type="radio" name="answer" value="Negative Emissionstechnologien"> Negative Emissionstechnologien <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    <div id="result"></div>
+)

@@ -1,6 +1,6 @@
 body {
   font-family: 'Arial', sans-serif;
-  background-image: url("img/smblvl.png");
+  background-image: url('/Uni/Fallstudie/QuellenPage/img/smblvl.png');
   background-size: cover; /* Das Bild wird so skaliert, dass es den gesamten Ansichtsbereich abdeckt */
   background-repeat: no-repeat; /* Das Bild wird nicht wiederholt */
   background-attachment: fixed; /* Das Hintergrundbild wird festgelegt, sodass es sich beim Scrollen nicht bewegt */

@@ -36,6 +36,8 @@ Enjine.Keys = {
     Down: 40
 };
 
+var blockedInput = false;
+
 Enjine.KeyboardInput = {
     Pressed: new Array(),
     
@@ -46,13 +48,16 @@ Enjine.KeyboardInput = {
     },
     
     IsKeyDown: function(key) {
-        if (this.Pressed[key] != null)
+        if (this.Pressed[key] != null && blockedInput === false)
             return this.Pressed[key];
         return false;
     },
     
     KeyDownEvent: function(event) {
-        this.Pressed[event.keyCode] = true;
+        if(blockedInput === false){
+            this.Pressed[event.keyCode] = true;
+        }
+
 	this.PreventScrolling(event);
     },
     

@@ -1,0 +1,142 @@
+
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a readable font and background color */
+/*
+body {
+    font-family: "Arial", Helvetica, sans-serif;
+    background-color: #bde7c5; 
+    color: #333;
+    line-height: 1.6;
+    margin: 20px;
+} */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #E6F7EF;
+    color: #333;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+
+article {
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2.2em;
+    color: #007A64;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: #2E598C;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.1em;
+    color: #2E598C;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+p {
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+strong {
+    font-weight: bold;
+    color: #0072b1;
+}
+
+a {
+    color: #0A8348;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+blockquote {
+    background-color: #f2f2f2;
+    border-left: 5px solid #0072b1;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+ul, ol {
+    margin: 20px 0;
+    padding-left: 20px;
+    color: #4D774E;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img:hover {
+    box-shadow: 3px 3px 5px #888888;
+}
+
+footer {
+    text-align: center;
+    margin: 20px 0;
+    color: #777;
+}
+
+.title {
+    font-size: 2.5em;
+    color: #0072b1;
+    text-align: center;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.image-caption {
+    font-size: 0.9em;        
+    color: #4D774E;           
+    margin-top: 5px;         
+    font-style: italic;      
+}
+
+.image-container {
+    text-align: center; 
+}
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 2px solid #4D774E;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #4D774E;
+}
+
+th {
+    background-color: #4D774E; 
+    color: white; 
+    /*
+    background-color: #007A64; 
+    color: #FFFFFF;       */    
+} 

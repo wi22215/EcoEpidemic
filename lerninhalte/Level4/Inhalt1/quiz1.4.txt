@@ -1,0 +1,13 @@
+const mitigationQuestion4 = new QuestionTemplate(
+    "Welcher Sektor hatte 2020 die größten Treibhausgasemissionen?",
+    ["Energie", "Gebäude", "Transport", "Industrie"],
+    "Industrie",
+    <h2>Welcher Sektor hatte 2020 die größten Treibhausgasemissionen?</h2>
+    <input type="radio" name="answer" value="Energie"> Energie <br>
+    <input type="radio" name="answer" value="Gebäude"> Gebäude <br>
+    <input type="radio" name="answer" value="Transport"> Transport <br>
+    <input type="radio" name="answer" value="Industrie"> Industrie <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    <div id="result"></div>
+)

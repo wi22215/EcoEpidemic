@@ -98,7 +98,6 @@ function showQuizPopup(key) {
   //console.log("ShowQuizPopup kommt an");
   let overlay = createOverlay();
   let questionsAsHTML = getQuestionData(key);
-  // todo: für jede question das popup erzeugen, wichtig: zum nächsten Popup darf erst wenn auf Nächste Frage geklickt wird
   let popupDiv = createPopupDiv();
   updatePopupContent(popupDiv, questionsAsHTML, overlay);
 
@@ -107,6 +106,8 @@ function showQuizPopup(key) {
 
   // Das Overlay zum Body hinzufügen
   document.body.appendChild(overlay);
+
+
 }
 
 function createOverlay(){
@@ -129,36 +130,18 @@ function createOverlay(){
 
 function getQuestionData(key){
 
-  if(mapOfQuiz.has(key)){
+  if(mapAllContentsOrder.has(key)){
 
-    /*
-    // Gib den Inhalt von mapOfQuiz und seinen Objekten aus
-    mapOfQuiz.forEach((quiz, key) => {
-      console.log(`Schlüssel: ${key}`);
-      console.log(quiz); // Gib das Quiz-Objekt aus
-
-      // Um auf die Fragen eines Quiz zuzugreifen, kannst du auch hier eine Schleife verwenden
-      quiz.questions.forEach((question, questionKey) => {
-        console.log(`Frage Schlüssel: ${questionKey}`);
-        console.log(question); // Gib das Frage-Objekt aus
-      });
-    });
-  */
-
-    const quiz = mapOfQuiz.get(key);
+    const quiz = getContent(key);
     const mapOfQuestions = quiz.questions;
     const htmlContentList = [];
 
-
-
     mapOfQuestions.forEach((question) => {
-
-
       htmlContentList.push(question.htmlContent);
     });
-
-
     return htmlContentList;
+
+
   } else {
     return "Kein Quiz mit dem Key gefunden";
   }
@@ -176,14 +159,16 @@ function createPopupDiv(){
 }
 
 function updatePopupContent(popupDiv, questionsAsHTML, overlay) {
-  if (currentQuestionIndex < questionsAsHTML.length) {
+  if (currentQuestionIndex <= questionsAsHTML.length) {
     // Es gibt weitere Fragen
     var questionHTML = questionsAsHTML[currentQuestionIndex-1];
     popupDiv.innerHTML = questionHTML;
 
     // Erstelle einen Button "Nächste Frage"
     var nextButton = document.createElement("button");
-    nextButton.textContent = "Nächste Frage";
+    nextButton.textContent = "N\u00e4chste Frage";
+    nextButton.className = "nextButtonClass";
+    nextButton.disabled = true;
     nextButton.addEventListener("click", function () {
       currentQuestionIndex++;
       updatePopupContent(popupDiv, questionsAsHTML, overlay);
@@ -198,6 +183,11 @@ function updatePopupContent(popupDiv, questionsAsHTML, overlay) {
     finishButton.textContent = "Fertig";
     finishButton.addEventListener("click", function () {
       document.body.removeChild(overlay);
+      currentQuestionIndex = 1;
+      overallContentIndex++;
+      currentQuizIndex++;
+      setDefaultEnemySpeed();
+      showNextContent();
     });
 
     popupDiv.appendChild(finishButton);
@@ -222,6 +212,12 @@ function checkAnswer() {
     showAnswer(currentQuestion, false);
   }
 
+  // Logik für Deaktivieren der Absende und Nächste Frage Button
+  const nextQuestionButton = document.querySelector(".nextButtonClass");
+  nextQuestionButton.disabled = false;
+  const absendenButton = document.querySelector(".AbsendenButtonClass");
+  absendenButton.disabled = true;
+
 }
 
 function showAnswer(currentQuestion, correct){
@@ -239,8 +235,6 @@ function showAnswer(currentQuestion, correct){
 
 function showNextQuestion(){
   currentQuestionIndex++;
-
-
   document.getElementById("nextButton").style.display = "none";
 }
 
@@ -288,3 +282,20 @@ function getQuizByKey(key){
     return "Ungültiger Quiz Key!"
   }
 }
+
+
+function showQuizPopupWithDelay(key, delayInSeconds){
+  setTimeout(function () {
+    showQuizPopup(key);
+    setEnemySpeedToZero();
+  }, delayInSeconds * 1000);
+}
+
+function createQuizUeberblick1(){
+  showQuizPopup("Quiz Ueberblick 1");
+}
+
+function createQuizUeberblick2(){
+  showQuizPopup("Quiz Ueberblick 2");
+}
+

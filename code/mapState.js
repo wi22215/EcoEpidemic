@@ -191,7 +191,7 @@ Mario.MapState.prototype.GenerateLevel = function() {
     var lowestX = 9999, lowestY = 9999, i = 0;
     t = 0;
 
-    while (levelCount < 6) {
+    while (levelCount < 2) {
         x = ((Math.random() * (((width - 1) / 3) | 0)) | 0) * 3 + 2;
         y = ((Math.random() * (((height - 1) / 3) | 0)) | 0) * 3 + 1;
 
@@ -668,8 +668,6 @@ Mario.MapState.prototype.GetY = function() {
 };
 
 
-
-
 /**
  Methode, die auf Level-Veränderungen reagiert:
  Hier wird definiert, was passiert, wann der Spieler gewinnt und was bei dem Eintritt in Level passiert
@@ -682,18 +680,39 @@ Mario.MapState.prototype.CheckForChange = function(context) {
     }
     if (this.EnterLevel) {
         if(this.LevelCounter === 1){ // Beim Eintritt in das Level 1...
-
+            showContent();
+            //showLevel1Content();
+            //createAllLevelContentPopups(this.LevelCounter);
+            //createTextPopup(currentContentIndex, 600, 400);
+            //createTextPopup(currentContentIndex, 600, 400);
             //createVideoPopup(this.LevelCounter, 600, 400);
-            showQuizPopup("Quiz Ueberblick");
+            //showQuizPopup("Quiz Ueberblick 1");
         }
         if(this.LevelCounter === 2){ // Beim Eintritt in das Level 2...
-            createTextPopup("<h1>Willkommen zum Popup</h1><p>Dies ist ein Beispieltext im Popup.</p>")
+            levelIndex++;
+            showContent();
+            //createTextPopup("<h1>Willkommen zum Popup</h1><p>Dies ist ein Beispieltext im Popup.</p>")
         }
+        if(this.LevelCounter === 3){ // Beim Eintritt in das Level 3...
+            levelIndex++;
+            showContent();
+        }
+
+        if(this.LevelCounter === 4){ // Beim Eintritt in das Level 4...
+            levelIndex++;
+            showContent();
+        }
+
+        if(this.LevelCounter === 5){ // Beim Eintritt in das Level 5...
+            levelIndex++;
+            showContent();
+        }
+
+
 
         //createVideoPopup(1, 640, 360);
         context.ChangeState(new Mario.LevelState(this.LevelDifficulty, this.LevelType));
     }
 };
-
 
 

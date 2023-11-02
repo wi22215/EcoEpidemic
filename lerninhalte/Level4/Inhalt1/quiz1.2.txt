@@ -1,0 +1,13 @@
+const mitigationQuestion2 = new QuestionTemplate(
+    "Was ist kein Treibhausgas laut dem Kyotoprotokoll?",
+    ["CH4", "H2Se", "SF6", "N2O"],
+    "H2Se",
+    <h2>Was ist kein Treibhausgas laut dem Kyotoprotokoll?</h2>
+    <input type="radio" name="answer" value="CH4"> CH4 <br>
+    <input type="radio" name="answer" value="H2Se"> H2Se <br>
+    <input type="radio" name="answer" value="SF6"> SF6 <br>
+    <input type="radio" name="answer" value="N2O"> N2O <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    <div id="result"></div>
+)

@@ -1,0 +1,13 @@
+const mitigationQuestion5 = new QuestionTemplate(
+    "Welches der folgenden hat den höchsten Albedo Wert?",
+    ["Terracottafarbene Häuserdächer", "Indischer Ozean", "Grönländisches Eisschild", "Regenwälder im Kongo-Becken"],
+    "Grönländisches Eisschild",
+    <h2>Welches der folgenden hat den höchsten Albedo Wert?</h2>
+    <input type="radio" name="answer" value="Terracottafarbene Häuserdächer"> Terracottafarbene Häuserdächer <br>
+    <input type="radio" name="answer" value="Indischer Ozean"> Indischer Ozean <br>
+    <input type="radio" name="answer" value="Grönländisches Eisschild"> Grönländisches Eisschild <br>
+    <input type="radio" name="answer" value="Regenwälder im Kongo-Becken"> Regenwälder im Kongo-Becken <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    <div id="result"></div>
+)

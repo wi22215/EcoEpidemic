@@ -1,0 +1,11 @@
+const mitigationQuestion3 = new QuestionTemplate(
+    "Negative Emissionstechnologien sind ein Ersatz für konventionelle Dekarbonisierung.",
+    ["wahr", "falsch"],
+    "falsch",
+    <h2>Negative Emissionstechnologien sind ein Ersatz für konventionelle Dekarbonisierung.</h2>
+    <input type="radio" name="answer" value="wahr"> wahr <br>
+    <input type="radio" name="answer" value="falsch"> falsch <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    <div id="result"></div>
+)
