@@ -12,3 +12,23 @@ const mitigationQuestion8 = new QuestionTemplate(
     <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
     <div id="result"></div>
 )
+
+
+
+const questionMiti8 = new QuestionTemplate(
+    "Welches dieser Klimaziele von Deutschland gibt es nicht?",
+    ["2045: Reduktion von Treibhausgasemissionen um 65%", "Ausbau erneuerbarer Energien", "CO2-abhängige LKW-Maut", "Förderung energetisches Sanieren"],
+      "2045: Reduktion von Treibhausgasemissionen um 65%",
+    `
+    <div style=\"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f0f0; padding: 5px; border-radius: 5px; text-align: left;\">
+    <h2>Welches dieser Klimaziele von Deutschland gibt es nicht?</h2>
+    <input type="radio" name="answer" value="2045: Reduktion von Treibhausgasemissionen um 65%"> 2045: Reduktion von Treibhausgasemissionen um 65% <br>
+    <input type="radio" name="answer" value="Ausbau erneuerbarer Energien"> Ausbau erneuerbarer Energien <br>
+    <input type="radio" name="answer" value="CO2-abhängige LKW-Maut"> CO2-abhängige LKW-Maut <br>
+    <input type="radio" name="answer" value="Förderung energetisches Sanieren"> Förderung energetisches Sanieren <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    </div>
+    <div id="result"></div> <!-- Hier wird das Ergebnis angezeigt -->
+  `
+);

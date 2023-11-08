@@ -2,7 +2,7 @@
 Skript für die Erstellung von Video oder Text-Popups
 **/
 
-let currentContentIndex = 1;
+let currentContentIndex = 1; // Index der nur die Contents (keine Quiz) hochzählt, wird bisher nicht genutzt
 
 
 /**
@@ -89,8 +89,6 @@ function createTextPopup(key, width, height) {
     if(mapAllContents.has(currentContentKey)){
 
         let content = mapAllContents.get(currentContentKey);
-        //let contentWithCSS = content.generateHTMLByCSSPath();
-        //let contentWithPureCSS = content.generateHTML();
         let htmlContent = content._htmlContent;
         textDiv.innerHTML = htmlContent;
     }
@@ -115,20 +113,77 @@ function createTextPopupWithDelay(key, width, height, delayInSeconds){
 
 
 function addCloseButton(textDiv){
-    // Schließen-Button erzeugen
     var closeButton = document.createElement("button");
     closeButton.innerText = "Weiter";
+    closeButton.className = "button-weiter";
     closeButton.style.position = "relative";
     closeButton.style.bottom = "10px";
     closeButton.style.right = "10px";
     closeButton.style.float = "right";
     closeButton.style.padding = "10px";
-    closeButton.style.backgroundColor = "#ccc";
     closeButton.style.border = "none";
     closeButton.style.cursor = "pointer";
+    var style = document.createElement('style');
+    // Füge CSS-Regeln zum <style>-Element hinzu
+    style.type = 'text/css';
+    style.innerHTML = `
     
 
-    // Lerninhalt kann per Schließen-Button unten rechts geschlossen werden
+    .button-weiter {
+        appearance: none;
+        background-color: #4D774E; 
+        border: 1px solid rgba(27, 31, 35, .15);
+        border-radius: 6px;
+        box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        padding: 6px 16px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+    .button-weiter:focus:not(:focus-visible):not(.focus-visible) {
+        box-shadow: none;
+        outline: none;
+    }
+
+    .button-weiter:hover {
+        background-color: #007A64;
+    }
+    .button-weiter:focus {
+        box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+        outline: none;
+    }
+
+    .button-weiter:disabled {
+        background-color: #007A64;
+        border-color: rgba(27, 31, 35, .1);
+        color: rgba(255, 255, 255, .8);
+        cursor: default;
+    }
+    
+    .button-weiter:active {
+        background-color: #007A64;
+        box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+    }`
+    ;
+    // Füge das <style>-Element zum <head> hinzu
+    document.getElementsByTagName('head')[0].appendChild(style);
+    // Schließen-Button
+    
+
+    // Wenn Lerninhalt geschlossen wird...
     closeButton.addEventListener("click", function () {
         document.body.removeChild(overlay);
         currentContentIndex++;
@@ -136,48 +191,8 @@ function addCloseButton(textDiv){
         setDefaultEnemySpeed();
         showNextContent();
 
-        /*
-        if(currentContentIndex<4)
-        createTextPopupWithDelay(currentContentIndex, 600, 400, 10);
-         */
-        /*
-        switch(overallContentIndex){
-            case 2: showQuizPopup1WithDelay(5);
-            case 3: showUeberblickContent2WithDelay(5);
-            //case 4: showQuizPopup2WithDelay(5);
-        }
-        */
     });
 
     // Close Button wird dem Text-Div hinzugefügt
     textDiv.appendChild(closeButton);
-}
-
-
-
-
-function showLevel1Content(){
-    createTextPopup("Ueberblick Content 1", 600, 400);
-}
-
-function showQuizPopup1WithDelay(delayInSeconds) {
-    setTimeout(function () {
-        showQuizPopup("Quiz Ueberblick 1");
-    }, delayInSeconds * 1000);
-
-}
-
-function showQuizPopup2WithDelay(delayInSeconds) {
-    setTimeout(function () {
-        showQuizPopup("Quiz Ueberblick 2");
-    }, delayInSeconds * 1000);
-
-}
-
-
-
-function showUeberblickContent2WithDelay(delayInSeconds){
-    setTimeout(function () {
-        createTextPopup("Ueberblick Content 2")
-    }, delayInSeconds * 1000);
 }

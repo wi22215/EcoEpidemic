@@ -1,12 +1,19 @@
 
-let overallContentIndex = 1;
-let levelIndex = 1;
-let level1ContentAnzahl = 6;
-let level2ContentAnzahl = 12;
-let level3ContentAnzahl = 18;
-let level4ContentAnzahl = 24;
-let level5ContentAnzahl = 27;
+let overallContentIndex = 1; // Index für aktuellen Content
+let levelIndex = 1; // Index für aktuelles Level
 
+// Diese Variablen werden genutzt, um die Anzahl der Popups für jedes Level zu steuern
+let level1ContentAnzahl = 4;
+let level2ContentAnzahl = 8;
+let level3ContentAnzahl = 12;
+let level4ContentAnzahl = 17;
+let level5ContentAnzahl = 21;
+
+let popupwidth = window.innerWidth*0.7;
+let popupheight = window.innerHeight*0.7;
+
+// Delay zwischen den Popups
+let popupdelay = 10; // in Sekunden
 
 function getContent(key){
     if(mapAllContentsOrder.has(key)){
@@ -20,7 +27,7 @@ function showContent(){
     setEnemySpeedToZero();
 
             if(currentContent instanceof ContentTemplate){
-                createTextPopup(overallContentIndex, 600, 400);
+                createTextPopup(overallContentIndex, popupwidth, popupheight);
             } else if (currentContent instanceof QuizTemplate){
                 showQuizPopup(overallContentIndex);
             } else if (currentContent instanceof VideoTemplate){
@@ -37,9 +44,9 @@ function showNextContent(){
         if(overallContentIndex<=level1ContentAnzahl){
 
             if(currentContent instanceof ContentTemplate){
-                createTextPopupWithDelay(overallContentIndex, 600, 400, 10);
+                createTextPopupWithDelay(overallContentIndex, popupwidth, popupheight, popupdelay);
             } else if (currentContent instanceof QuizTemplate){
-                showQuizPopupWithDelay(overallContentIndex, 10);
+                showQuizPopupWithDelay(overallContentIndex, popupdelay);
             } else if (currentContent instanceof VideoTemplate){
                 createVideoPopup(overallContentIndex);
             }
@@ -51,9 +58,9 @@ function showNextContent(){
         if(overallContentIndex<=level2ContentAnzahl){
 
             if(currentContent instanceof ContentTemplate){
-                createTextPopupWithDelay(overallContentIndex, 600, 400, 10);
+                createTextPopupWithDelay(overallContentIndex, popupwidth, popupheight, popupdelay);
             } else if (currentContent instanceof QuizTemplate){
-                showQuizPopupWithDelay(overallContentIndex, 10);
+                showQuizPopupWithDelay(overallContentIndex, popupdelay);
             } else if (currentContent instanceof VideoTemplate){
                 createVideoPopup(overallContentIndex);
             }
@@ -65,9 +72,9 @@ function showNextContent(){
         if(overallContentIndex<=level3ContentAnzahl){
 
             if(currentContent instanceof ContentTemplate){
-                createTextPopupWithDelay(overallContentIndex, 600, 400, 10);
+                createTextPopupWithDelay(overallContentIndex, popupwidth, popupheight, popupdelay);
             } else if (currentContent instanceof QuizTemplate){
-                showQuizPopupWithDelay(overallContentIndex, 10);
+                showQuizPopupWithDelay(overallContentIndex, popupdelay);
             } else if (currentContent instanceof VideoTemplate){
                 createVideoPopup(overallContentIndex);
             }
@@ -78,9 +85,9 @@ function showNextContent(){
         if(overallContentIndex<=level4ContentAnzahl){
 
             if(currentContent instanceof ContentTemplate){
-                createTextPopupWithDelay(overallContentIndex, 600, 400, 10);
+                createTextPopupWithDelay(overallContentIndex, popupwidth, popupheight, popupdelay);
             } else if (currentContent instanceof QuizTemplate){
-                showQuizPopupWithDelay(overallContentIndex, 10);
+                showQuizPopupWithDelay(overallContentIndex, popupdelay);
             } else if (currentContent instanceof VideoTemplate){
                 createVideoPopup(overallContentIndex);
             }
@@ -92,9 +99,9 @@ function showNextContent(){
         if(overallContentIndex<=level5ContentAnzahl){
 
             if(currentContent instanceof ContentTemplate){
-                createTextPopupWithDelay(overallContentIndex, 600, 400, 10);
+                createTextPopupWithDelay(overallContentIndex, popupwidth, popupheight, popupdelay);
             } else if (currentContent instanceof QuizTemplate){
-                showQuizPopupWithDelay(overallContentIndex, 10);
+                showQuizPopupWithDelay(overallContentIndex, popupdelay);
             } else if (currentContent instanceof VideoTemplate){
                 createVideoPopup(overallContentIndex);
             }

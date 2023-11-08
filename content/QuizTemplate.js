@@ -1,8 +1,4 @@
 class QuizTemplate {
-    /*
-    set index(value) {
-        this._index = value;
-    }*/
 
     constructor(key) {
         this._questions = new Map();
@@ -13,11 +9,6 @@ class QuizTemplate {
         this._questions.set(key, question);
     }
 
-    /*
-    get index(){
-        return this._index;
-    }
-    */
     get questions() {
         return this._questions;
     }

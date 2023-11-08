@@ -30,8 +30,11 @@ Mario.TitleState.prototype.Enter = function() {
     this.logo.Image = Enjine.Resources.Images["logo"];
     this.logo.X = 0, this.logo.Y = 0;
 
+    this.fonttitle = Mario.SpriteCuts.CreateBlackFont();
+    this.fonttitle.Strings[0] = { String: "EcoEpidemic", X: 96, Y: 60 };
+
     this.font = Mario.SpriteCuts.CreateRedFont();
-    this.font.Strings[0] = { String: "Press S to Start", X: 96, Y: 120 };
+    this.font.Strings[0] = { String: "Druecke S zum Starten", X: 76, Y: 100 };
 
     this.logoY = 20;
 
@@ -55,6 +58,7 @@ Mario.TitleState.prototype.Exit = function() {
     delete this.drawManager;
     delete this.camera;
     delete this.font;
+    delete this.fonttitle;
 };
 
 Mario.TitleState.prototype.Update = function(delta) {
@@ -73,6 +77,7 @@ Mario.TitleState.prototype.Draw = function(context) {
     context.drawImage(Enjine.Resources.Images["logo"], 0, this.logoY);
 
     this.font.Draw(context, this.Camera);
+    //this.fonttitle.Draw(context, this.Camera);
 };
 
 Mario.TitleState.prototype.CheckForChange = function(context) {

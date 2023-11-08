@@ -1,13 +1,8 @@
 class ContentTemplate {
-    constructor(theme, htmlContent, index, css) {
+    constructor(theme, htmlContent, index) {
         this._theme = theme;
         this._htmlContent = htmlContent;
         this._index = index;
-        this.style = css;
-    }
-
-    setStyle(css) {
-        this.style = css;
     }
 
     get theme() {
@@ -34,21 +29,5 @@ class ContentTemplate {
         this._index = newIndex;
     }
 
-    generateHTMLByCSSPath(){
-        return `<head>
-        <link rel="stylesheet" type="text/css" href="${this.style}">
-        </head>
-        <body>
-            <div id="content${this.theme}">
-              ${this.htmlContent}
-            </div>
-        </body>`;
-    }
-
-    generateHTML() {
-        return `<div id="content${this.theme}" class="" style="${this.style}">
-              ${this.htmlContent}
-            </div>`;
-    }
 }
 

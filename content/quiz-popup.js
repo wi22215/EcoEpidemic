@@ -1,101 +1,9 @@
 
-
 let currentQuestionIndex = 1;
 let currentQuizIndex = 1;
-//let currentQuestionKey = "Frage 1";
-
-//const mapOfQuiz = new Map();
-//const mapQuizOrder = new Map();
-/*
-function initAllQuiz(){
-
-
-  const question1 = new QuestionTemplate(
-      "Was ist die Hauptstadt von Frankreich?",
-      ["Berlin", "Madrid", "Paris", "Rom"],
-      2,
-      `
-    <h2>Was ist die Hauptstadt von Frankreich?</h2>
-    <input type="radio" name="answer" value="Paris"> Paris<br>
-    <input type="radio" name="answer" value="Berlin"> Berlin<br>
-    <input type="radio" name="answer" value="London"> London<br>
-    <input type="radio" name="answer" value="Madrid"> Madrid<br>
-    <button onclick="checkAnswer()">Absenden</button><br>
-    <button style="display: none;" id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
-    <div id="result"></div> <!-- Hier wird das Ergebnis angezeigt -->
-  `
-  );
-
-  const question2 = new QuestionTemplate(
-      "Welches Element hat das chemische Symbol 'H'?",
-      ["Helium", "Kohlenstoff", "Sauerstoff", "Wasserstoff"],
-      3,
-      `
-    <h2>Welches Element hat das ?</h2>
-    <input type="radio" name="answer" value="Heli"> Paris<br>
-    <input type="radio" name="answer" value="Berlin"> Berlin<br>
-    <input type="radio" name="answer" value="London"> London<br>
-    <input type="radio" name="answer" value="Madrid"> Madrid<br>
-    <button onclick="checkAnswer()">Absenden</button><br>
-    <button style="display: none;" id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
-    <div id="result"></div> <!-- Hier wird das Ergebnis angezeigt -->
-  `
-  );
-
-  const question3 = new QuestionTemplate(
-      "Wie viele Kontinente gibt es auf der Erde?",
-      ["5", "6", "7", "8"],
-      2,
-      `
-    <h2>Was ist die Hauptstadt von Frankreich?</h2>
-    <input type="radio" name="answer" value="Paris"> Paris<br>
-    <input type="radio" name="answer" value="Berlin"> Berlin<br>
-    <input type="radio" name="answer" value="London"> London<br>
-    <input type="radio" name="answer" value="Madrid"> Madrid<br>
-    <button onclick="checkAnswer()">Absenden</button><br>
-    <button style="display: none;" id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
-    <div id="result"></div> <!-- Hier wird das Ergebnis angezeigt -->
-  `
-  );
-
-  const question4 = new QuestionTemplate(
-      "Was ist die Hauptfarbe des Himmels an einem klaren Tag?",
-      ["Rot", "Blau", "Grün", "Gelb"],
-      1,
-      `
-    <h2>Was ist die Hauptstadt von Frankreich?</h2>
-    <input type="radio" name="answer" value="Paris"> Paris<br>
-    <input type="radio" name="answer" value="Berlin"> Berlin<br>
-    <input type="radio" name="answer" value="London"> London<br>
-    <input type="radio" name="answer" value="Madrid"> Madrid<br>
-    <button onclick="checkAnswer()">Absenden</button><br>
-    <button style="display: none;" id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
-    <div id="result"></div> <!-- Hier wird das Ergebnis angezeigt -->
-  `
-  );
-
-  const quiz1 = new QuizTemplate();
-  quiz1.addQuestion(question1);
-  quiz1.addQuestion(question2);
-  quiz1.addQuestion(question3);
-  quiz1.addQuestion(question4);
-
-  mapOfQuiz.set("Quiz Ueberblick", quiz1);
-//mapOfQuiz.set("Quiz Planetary Health", quiz2);
-//mapOfQuiz.set("Quiz Adaption", quiz3);
-//mapOfQuiz.set("Quiz Mitigation", quiz4);
-//mapOfQuiz.set("Quiz Use Case", quiz5);
-
-  mapQuizOrder.set(1, "Quiz Ueberblick");
-  mapQuizOrder.set(2, "Quiz Planetary Health");
-  mapQuizOrder.set(3, "Quiz Adaption");
-  mapQuizOrder.set(4, "Quiz Mitigation");
-  mapQuizOrder.set(5, "Quiz Use Case");
-}
-*/
 
 function showQuizPopup(key) {
-  //console.log("ShowQuizPopup kommt an");
+
   let overlay = createOverlay();
   let questionsAsHTML = getQuestionData(key);
   let popupDiv = createPopupDiv();
@@ -168,6 +76,62 @@ function updatePopupContent(popupDiv, questionsAsHTML, overlay) {
     var nextButton = document.createElement("button");
     nextButton.textContent = "N\u00e4chste Frage";
     nextButton.className = "nextButtonClass";
+    var style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = `
+    
+
+    .nextButtonClass {
+      appearance: none;
+      background-color: #93C5CC;
+      border: 1px solid rgba(27, 31, 35, .15);
+      border-radius: 6px;
+      box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      padding: 6px 16px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    .nextButtonClass:focus:not(:focus-visible):not(.focus-visible) {
+      box-shadow: none;
+      outline: none;
+    }
+
+    .nextButtonClass:hover {
+      background-color: #6D9EA5;
+    }
+    .nextButtonClass:focus {
+      box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+      outline: none;
+    }
+
+    .nextButtonClass:disabled {
+      background-color: #6D9EA5;
+      border-color: rgba(27, 31, 35, .1);
+      color: rgba(255, 255, 255, .8);
+      cursor: default;
+    }
+    
+    .nextButtonClass:active {
+      background-color: #6D9EA5;
+      box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+    }`
+    ;
+    // Füge das <style>-Element zum <head> hinzu
+    document.getElementsByTagName('head')[0].appendChild(style);
     nextButton.disabled = true;
     nextButton.addEventListener("click", function () {
       currentQuestionIndex++;
@@ -177,10 +141,69 @@ function updatePopupContent(popupDiv, questionsAsHTML, overlay) {
     popupDiv.appendChild(nextButton);
   } else {
     // Es gibt keine weiteren Fragen, ändere den Button in "Abschließen"
-    popupDiv.innerHTML = "Alle Fragen wurden beantwortet.";
+    popupDiv.innerHTML = "<span style=\"font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:2.2em; color:#2E598C;\"><b>Du hast alle Fragen beantwortet!</b></span> <br> <br>";
+    // Erstelle ein <style>-Element
+    var style = document.createElement('style');
+    // Füge CSS-Regeln zum <style>-Element hinzu
+    style.type = 'text/css';
+    style.innerHTML = `
+    
+
+    .button-finish {
+      appearance: none;
+      background-color: #2ea44f;
+      border: 1px solid rgba(27, 31, 35, .15);
+      border-radius: 6px;
+      box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+      box-sizing: border-box;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 20px;
+      padding: 6px 16px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    .button-finish:focus:not(:focus-visible):not(.focus-visible) {
+      box-shadow: none;
+      outline: none;
+    }
+
+    .button-finish:hover {
+      background-color: #6D9EA5;
+    }
+    .button-finish:focus {
+      box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+      outline: none;
+    }
+
+    .button-finish:disabled {
+      background-color: #6D9EA5;
+      border-color: rgba(27, 31, 35, .1);
+      color: rgba(255, 255, 255, .8);
+      cursor: default;
+    }
+    
+    .button-finish:active {
+      background-color: #6D9EA5;
+      box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+    }`
+    ;
+    // Füge das <style>-Element zum <head> hinzu
+    document.getElementsByTagName('head')[0].appendChild(style);
 
     var finishButton = document.createElement("button");
     finishButton.textContent = "Fertig";
+    finishButton.className = "button-finish";
     finishButton.addEventListener("click", function () {
       document.body.removeChild(overlay);
       currentQuestionIndex = 1;
@@ -201,6 +224,7 @@ function updatePopupContent(popupDiv, questionsAsHTML, overlay) {
 function checkAnswer() {
   const answerButton = document.querySelector('input[name="answer"]:checked');
   const answer = answerButton.value;
+  
 
   //let currentQuiz = getQuizByIndex(currentQuizIndex);
   let currentQuiz = getQuizByIndex(currentQuizIndex);
@@ -248,14 +272,7 @@ function getQuestionByKey(currentQuiz, currentQuestionIndex){
   } else {
     return "Ungültiger Question Key bei getQuestionByKey()!"
   }
-  /*
-  if (questionKey > 0 && questionKey <= currentQuiz.questions.length) {
-    return currentQuiz.questions[questionKey];
-  } else {
-    return null; // Index ist ungültig
-  }
 
-   */
 }
 
 function getQuizByIndex(quizIndex){
@@ -264,15 +281,6 @@ function getQuizByIndex(quizIndex){
     quizName = mapQuizOrder.get(quizIndex);
     return mapOfQuiz.get(quizName);
   }
-
-  /*
-  if (quizIndex > 0 && quizIndex <= mapOfQuiz.size) {
-    return mapOfQuiz[quizIndex - 1];
-  } else {
-    return null; // Index ist ungültig
-  }
-
-   */
 }
 
 function getQuizByKey(key){
@@ -289,13 +297,5 @@ function showQuizPopupWithDelay(key, delayInSeconds){
     showQuizPopup(key);
     setEnemySpeedToZero();
   }, delayInSeconds * 1000);
-}
-
-function createQuizUeberblick1(){
-  showQuizPopup("Quiz Ueberblick 1");
-}
-
-function createQuizUeberblick2(){
-  showQuizPopup("Quiz Ueberblick 2");
 }
 

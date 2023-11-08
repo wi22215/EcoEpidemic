@@ -681,17 +681,10 @@ Mario.MapState.prototype.CheckForChange = function(context) {
     if (this.EnterLevel) {
         if(this.LevelCounter === 1){ // Beim Eintritt in das Level 1...
             showContent();
-            //showLevel1Content();
-            //createAllLevelContentPopups(this.LevelCounter);
-            //createTextPopup(currentContentIndex, 600, 400);
-            //createTextPopup(currentContentIndex, 600, 400);
-            //createVideoPopup(this.LevelCounter, 600, 400);
-            //showQuizPopup("Quiz Ueberblick 1");
         }
         if(this.LevelCounter === 2){ // Beim Eintritt in das Level 2...
             levelIndex++;
             showContent();
-            //createTextPopup("<h1>Willkommen zum Popup</h1><p>Dies ist ein Beispieltext im Popup.</p>")
         }
         if(this.LevelCounter === 3){ // Beim Eintritt in das Level 3...
             levelIndex++;

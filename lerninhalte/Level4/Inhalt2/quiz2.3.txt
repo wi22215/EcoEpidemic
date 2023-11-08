@@ -9,3 +9,21 @@ const mitigationQuestion7 = new QuestionTemplate(
     <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
     <div id="result"></div>
 )
+
+
+
+const questionMiti7 = new QuestionTemplate(
+    "Die BRICS-Länder reduzieren ihren CO2 Ausstoß, während die OECD-Länder ihren CO2 Ausstoß erhöhen.",
+    ["wahr", "falsch"],
+    "falsch",
+    `
+    <div style=\"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f0f0; padding: 5px; border-radius: 5px; text-align: left;\">
+    <h2>Die BRICS-Länder reduzieren ihren CO2 Ausstoß, während die OECD-Länder ihren CO2 Ausstoß erhöhen.</h2>
+    <input type="radio" name="answer" value="wahr"> wahr <br>
+    <input type="radio" name="answer" value="falsch"> falsch <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    </div>
+    <div id="result"></div> <!-- Hier wird das Ergebnis angezeigt -->
+  `
+);
