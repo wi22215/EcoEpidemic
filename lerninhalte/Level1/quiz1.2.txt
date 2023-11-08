@@ -1,0 +1,17 @@
+const allgemeinquestion2 : QuestionTemplate = new QuestionTemplate(
+    "In welche Kategorie kann Luftverschmutzung eingeordnet werden?",
+    ["Erhoehte CO2-Level","Steigender Meeresspiegel", "Vermehrte Extremwetterevents", "Steigende Temperaturen"],
+    "Erhoehte CO2-Level"
+)
+
+<div style=\"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f0f0; padding: 5px; border-radius: 5px; text-align: left;\">
+<h2 style=\"font-size: 2.2em; color: #93C5CC; font-weight: bold; margin-bottom: 20px;\">In welche Kategorie kann Luftverschmutzung eingeordnet werden?</h2>
+<input type="radio" name="answer" value="Erhoehte CO2-Level"> <span style=\"font-size: 1.1em;\">Erhoehte CO2-Level</span> <br>
+<input type="radio" name="answer" value="Steigender Meeresspiegel"> <span style=\"font-size: 1.1em;\">Steigender Meeresspiegel</span> <br>
+<input type="radio" name="answer" value="Vermehrte Extremwetterevents"> <span style=\"font-size: 1.1em;\">Vermehrte Extremwetterevents</span><br>
+<input type="radio" name="answer" value="Steigende Temperaturen"> <span style=\"font-size: 1.1em;\">Steigende Temperaturen</span><br>
+<br>
+<button onclick="checkAnswer()">Absenden</button><br>
+<button id="nextButton" onclick="showNextQuestion()"> nächste Frage</button>
+</div>
+    <div id="result"></div>

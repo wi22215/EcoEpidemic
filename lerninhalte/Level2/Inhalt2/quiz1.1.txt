@@ -1,0 +1,13 @@
+const wasserUndGesundheitquestion1 : QuestionTemplate = new QuestionTemplate(
+    "Welches Element wird im Text hervorgehoben, das das Leben auf der Erde ermöglicht und zentral für das Konzept der Planetary Health ist?",
+    ["Luft","Erde", "Feuer", "Wasser"],
+    "Wasser"
+)
+
+<h2>Welches Element wird im Text hervorgehoben, das das Leben auf der Erde ermöglicht und zentral für das Konzept der Planetary Health ist?</h2>
+<input type="radio" name="answer" value=" Luft">  Luft <br>
+<input type="radio" name="answer" value=" Erde">  Erde <br>
+<input type="radio" name="answer" value="  Feuer">   Feuer <br>
+<input type="radio" name="answer" value=" Wasser">  Wasser <br>
+<button onclick="checkAnswer()">Absenden</button><br>
+<button id="nextButton" onclick="showNextQuestion()"> nächste Frage</button>

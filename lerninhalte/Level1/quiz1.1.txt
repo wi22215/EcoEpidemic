@@ -1,0 +1,17 @@
+const allgemeinquestion1 : QuestionTemplate = new QuestionTemplate(
+    "Welches Thema wird im Folgenden nicht naeher beleuchtet?",
+    ["Anpassung des Menschens","Planetary Health", "Verringerung der Treibhausgase", "Zunehmende Hitzegefahr"],
+    "Zunehmende Hitzegefahr"
+)
+
+<div style=\"font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f0f0; padding: 5px; border-radius: 5px; text-align: left;\">
+<h2 style=\"font-size: 2.2em; color: #93C5CC; font-weight: bold; margin-bottom: 20px;\">Welches Thema wird im Folgenden nicht n&auml;her beleuchtet?</h2>
+<input type="radio" name="answer" value="Anpassung des Menschens"> <span style=\"font-size: 1.1em;\">Anpassung des Menschens</span> <br>
+<input type="radio" name="answer" value="Planetary Health"> <span style=\"font-size: 1.1em;\">Planetary Health</span> <br>
+<input type="radio" name="answer" value="Verringerung der Treibhausgase"> <span style=\"font-size: 1.1em;\">Verringerung der Treibhausgase</span><br>
+<input type="radio" name="answer" value="Zunehmende Hitzegefahr"> <span style=\"font-size: 1.1em;\">Zunehmende Hitzegefahr</span><br>
+<br>
+<button onclick="checkAnswer()">Absenden</button><br>
+<button id="nextButton" onclick="showNextQuestion()"> nächste Frage</button>
+</div>
+<div id="result"></div>

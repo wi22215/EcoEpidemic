@@ -1,0 +1,13 @@
+const luftverschmutzungsquestion1 : QuestionTemplate = new QuestionTemplate(
+    "Was verursacht Luftverschmutzung?",
+    ["Die Anwesenheit von Büchern in der Bibliothek","Das Vorhandensein von Fremd- oder Schadstoffen in der Luft", "Die übermäßige Nutzung von elektrischen Geräten", "Die Zunahme von Autos auf den Straßen, unabhängig von ihrer Emission"],
+    "Das Vorhandensein von Fremd- oder Schadstoffen in der Luft"
+)
+
+<h2>Was verursacht Luftverschmutzung?</h2>
+<input type="radio" name="answer" value=" Die Anwesenheit von Büchern in der Bibliothek">  Die Anwesenheit von Büchern in der Bibliothek <br>
+<input type="radio" name="answer" value=" Das Vorhandensein von Fremd- oder Schadstoffen in der Luft">  Das Vorhandensein von Fremd- oder Schadstoffen in der Luft <br>
+<input type="radio" name="answer" value="  Die übermäßige Nutzung von elektrischen Geräten">   Die übermäßige Nutzung von elektrischen Geräten <br>
+<input type="radio" name="answer" value=" Die Zunahme von Autos auf den Straßen, unabhängig von ihrer Emission">  Die Zunahme von Autos auf den Straßen, unabhängig von ihrer Emission <br>
+<button onclick="checkAnswer()">Absenden</button><br>
+<button id="nextButton" onclick="showNextQuestion()"> nächste Frage</button>

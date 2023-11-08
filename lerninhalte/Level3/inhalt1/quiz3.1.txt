@@ -1,0 +1,13 @@
+const adaptationQuestion1 = new QuestionTemplate(
+    "Was sind die Haupttreiber des Klimawandels in städtischen Gebieten?",
+    ["Niedrige Bevölkerungsdichte und geringer Energieverbrauch", "Hohe Anzahl an Grünflächen und Parks", "Demografische Struktur, Wirtschaftswachstum, individuelles Einkommen und Lebensstil, Gebäude", "Geringe Anzahl an Gebäuden und Infrastrukturen"],
+    "Demografische Struktur, Wirtschaftswachstum, individuelles Einkommen und Lebensstil, Gebäude",
+    <h2>Was sind die Haupttreiber des Klimawandels in städtischen Gebieten?</h2>
+    <input type="radio" name="answer" value="Niedrige Bevölkerungsdichte und geringer Energieverbrauch"> Niedrige Bevölkerungsdichte und geringer Energieverbrauch <br>
+    <input type="radio" name="answer" value="Hohe Anzahl an Grünflächen und Parks"> Hohe Anzahl an Grünflächen und Parks <br>
+    <input type="radio" name="answer" value="Demografische Struktur, Wirtschaftswachstum, individuelles Einkommen und Lebensstil, Gebäude"> Demografische Struktur, Wirtschaftswachstum, individuelles Einkommen und Lebensstil, Gebäude <br>
+    <input type="radio" name="answer" value="Geringe Anzahl an Gebäuden und Infrastrukturen"> Geringe Anzahl an Gebäuden und Infrastrukturen <br>
+    <button onclick="checkAnswer()">Absenden</button><br>
+    <button style="..." id="nextButton" onclick="showNextQuestion()">Nächste Frage</button>
+    <div id="result"></div>
+)
